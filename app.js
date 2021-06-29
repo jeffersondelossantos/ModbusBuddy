@@ -1,7 +1,14 @@
-const io = require("socket.io-client");
+const net = require('net');
 
-let socket = io.connect("http://localhost:502");
+const options = {
+    port: 502
+};
 
-socket.on("welcome", (data) => {
-    console.log("Received ", data);
+const client = net.createConnection(options, () => {
+    client.write('hello\r\n');
 });
+
+client.on('data', data => {
+    console.log(data.toString());
+    client.end();
+})
