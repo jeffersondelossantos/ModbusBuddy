@@ -1,0 +1,12 @@
+this is the configuration page
+
+<h2>Configuration</h2>
+
+<form action="/configuration" method="POST">
+
+    <label>Status</label>
+    <input type="text" name="status" value="<%= configuration.status %> ">
+
+    <a href="/configuration">Cancel</a>
+    <button type="submit">Save</button>
+</form>
