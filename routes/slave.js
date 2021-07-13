@@ -36,7 +36,7 @@ router.post('/', (req, res) => {
 
 function startServer() {
     console.log("starting server");
-    simServer.listen(9999, () => {
+    simServer.listen(502, () => {
         console.log("Simulator server listening on port 502");
     });
 }
